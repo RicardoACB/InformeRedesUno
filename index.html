@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Laboratorio de Redes</title>
+    <style>
+        /* Estilos para emular el documento PDF */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 11pt;
+            color: #333;
+            margin: 40px;
+        }
+        .cover-page {
+            text-align: center;
+            padding: 50px 20px;
+            border: 1px solid #ccc;
+            margin-bottom: 40px;
+            page-break-after: always;
+        }
+        .main-header {
+            font-size: 1.2em;
+            letter-spacing: 4px;
+            margin-bottom: 60px;
+            color: #555;
+        }
+        .report-title {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .report-subtitle {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+        .author-info {
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        .page {
+            page-break-before: always;
+        }
+        h1, h2 {
+            text-align: center;
+            font-weight: normal;
+            letter-spacing: 2px;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            color: #000;
+        }
+        h1 {
+            font-size: 1.8em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.4em;
+        }
+        h3 {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f7f7f7;
+            font-weight: bold;
+        }
+        .placeholder {
+            text-align: center;
+            padding: 20px;
+            border: 1px dashed #ccc;
+            margin: 20px auto;
+            background-color: #fafafa;
+            width: 80%;
+        }
+        .code {
+            background-color: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PORTADA -->
+    <div class="cover-page">
+        <div class="main-header">LABORATORIO DE REDES Y CIBERSEGURIDAD</div>
+        <div class="report-title">Informe de Laboratorio</div>
+        <div class="report-subtitle">Tarea 1: Spanning Tree, VLANs y Trunks</div>
+        <br><br><br>
+        <div class="author-info">
+            <strong>Autor:</strong> [Tu Nombre]
+            <br>
+            <strong>Curso:</strong> Redes y Cyber Seguridad
+            <br>
+            <strong>Fecha:</strong> Septiembre, 2025
+        </div>
+    </div>
+
+    <!-- ÍNDICE -->
+    <div class="page">
+        <h1>Índice</h1>
+        <h3>Parte 1: Spanning Tree</h3>
+        <ul>
+            <li>Apartado 1: Análisis de Configuración Inicial</li>
+            <li>Apartado 2: Designación de un Nuevo Puente Raíz</li>
+        </ul>
+        <h3>Parte 3: VLANs y Enlaces Troncales</h3>
+        <ul>
+            <li>Apartado 1: Configuración de Interfaces Trunk</li>
+            <li>Apartado 2: Análisis de Tramas en Modo Simulación</li>
+            <li>Apartado 3: Estructura del Protocolo de Encapsulamiento Trunk</li>
+        </ul>
+    </div>
+
+    <!-- CONTENIDO DEL INFORME -->
+    <div class="page">
+        <h1>Parte 1: Spanning Tree</h1>
+        <h2>APARTADO 1: ANÁLISIS DE CONFIGURACIÓN INICIAL</h2>
+
+        <h3>A. Estado de la red y tabla de direcciones MAC</h3>
+        <p>A continuación se muestra el estado inicial de la red, con el switch raíz (Switch2) encerrado en un círculo, y la tabla de asignación de direcciones MAC de cada conmutador.</p>
+        <div class="placeholder">[Imagen de la configuración inicial de los conmutadores con Switch2 como raíz]</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Switch</th>
+                    <th>MAC del switch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Switch 0</td>
+                    <td>0060.5CEB.4161</td>
+                </tr>
+                <tr>
+                    <td>Switch 1</td>
+                    <td>00D0.97BB.0354</td>
+                </tr>
+                <tr>
+                    <td>Switch 2</td>
+                    <td>0060.3EE9.EEBA</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>B. Configuración de Spanning Tree por switch</h3>
+        <p>Se presenta la configuración detallada del protocolo Spanning Tree para cada uno de los switches de la topología. Se destaca la información del Puente Raíz y la prioridad de cada dispositivo.</p>
+        <div class="placeholder">[Imagen de la interfaz del switch 0 con la configuración del Spanning Tree]</div>
+        <div class="placeholder">[Imagen de la interfaz del switch 1 con la configuración del Spanning Tree]</div>
+        <div class="placeholder">[Imagen de la interfaz del switch 2 con la configuración del Spanning Tree]</div>
+
+        <h3>C. Definición de roles de puertos</h3>
+        <p><strong>Puente raíz:</strong> 0060.3EE9.EEBA (Switch 2).</p>
+        <p>La asignación de roles para cada puerto se detalla en la siguiente tabla:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo de puerto</th>
+                    <th>Switch</th>
+                    <th>Puerto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Raíz</td>
+                    <td>Switch0</td>
+                    <td>Gi0/2</td>
+                </tr>
+                <tr>
+                    <td>Designado</td>
+                    <td>Switch0</td>
+                    <td>Gi0/1</td>
+                </tr>
+                <tr>
+                    <td>Designado</td>
+                    <td>Switch2</td>
+                    <td>Gi0/1</td>
+                </tr>
+                <tr>
+                    <td>Designado</td>
+                    <td>Switch2</td>
+                    <td>Gi0/2</td>
+                </tr>
+                <tr>
+                    <td>Bloqueado</td>
+                    <td>Switch1</td>
+                    <td>Gi0/1</td>
+                </tr>
+                <tr>
+                    <td>Raíz</td>
+                    <td>Switch1</td>
+                    <td>Gi0/2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Explicación del proceso de asignación</h3>
+        <p>Al iniciar la red, los switches intercambian mensajes BPDU para mapear la topología. El <strong>Switch 2</strong> es elegido como puente raíz por tener la dirección MAC más baja, dado que todos los switches comparten la misma prioridad (32769). Por definición, todos sus puertos activos (Gi0/1 y Gi0/2) se convierten en puertos designados.</p>
+        <p>El <strong>Switch 0</strong> selecciona su interfaz Gi0/2 como puerto raíz, ya que ofrece el camino de menor coste hacia el puente raíz. Su otra interfaz, Gi0/1, se establece como puerto designado para el segmento de red que comparte con el Switch 1.</p>
+        <p>Finalmente, el <strong>Switch 1</strong> elige su interfaz Gi0/2 como puerto raíz. El enlace entre el Switch 1 (puerto Gi0/1) y el Switch 0 (puerto Gi0/1) genera un bucle, por lo que uno de los puertos debe ser bloqueado. Se bloquea el puerto Gi0/1 del Switch 1, ya que el puerto del Switch 0 tiene un port-ID más bajo y, por tanto, mayor preferencia para permanecer activo.</p>
+    </div>
+
+    <div class="page">
+        <h2>APARTADO 2: DESIGNACIÓN DE UN NUEVO PUENTE RAÍZ</h2>
+        <h3>A. Comando aplicado</h3>
+        <p>Para designar el switch con la MAC más alta (Switch 1) como nuevo puente raíz, se debe modificar su prioridad para que sea la más baja de la red. Se aplicó el siguiente comando en el modo de configuración global del Switch 1:</p>
+        <p class="code">Switch(config)# spanning-tree vlan 1 priority 4096</p>
+        <p>Una alternativa más directa sería usar el comando <span class="code">spanning-tree vlan 1 root primary</span>.</p>
+
+        <h3>B. Nueva configuración del Spanning Tree</h3>
+        <p>Tras aplicar el comando, la topología converge con el Switch 1 como nuevo puente raíz.</p>
+        <div class="placeholder">[Imagen de la nueva configuración de red con Switch1 como raíz]</div>
+        <p><strong>Nuevo puente raíz:</strong> 00D0.97BB.0354 (Switch 1).</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tipo de puerto</th>
+                    <th>Switch</th>
+                    <th>Puerto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Raíz</td>
+                    <td>Switch0</td>
+                    <td>Gi0/2</td>
+                </tr>
+                <tr>
+                    <td>Designado</td>
+                    <td>Switch0</td>
+                    <td>Gi0/1</td>
+                </tr>
+                <tr>
+                    <td>Designado</td>
+                    <td>Switch1</td>
+                    <td>Gi0/1</td>
+                </tr>
+                <tr>
+                    <td>Designado</td>
+                    <td>Switch1</td>
+                    <td>Gi0/2</td>
+                </tr>
+                <tr>
+                    <td>Bloqueado</td>
+                    <td>Switch2</td>
+                    <td>Gi0/1</td>
+                </tr>
+                <tr>
+                    <td>Raíz</td>
+                    <td>Switch2</td>
+                    <td>Gi0/2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>C. Efecto del comando</h3>
+        <p>Al reducir la prioridad del Switch 1 a 4096 (un valor inferior a 32769), su Bridge ID se convirtió en el más bajo de la topología, forzando su elección como nuevo puente raíz. Esto provocó una re-convergencia del Spanning Tree, cambiando los roles de los puertos en los otros switches para evitar bucles en la nueva estructura.</p>
+    </div>
+
+    <div class="page">
+        <h1>Parte 3: VLANs y Enlaces Troncales</h1>
+        <h2>APARTADO 1: CONFIGURACIÓN DE INTERFACES TRUNK</h2>
+
+        <h3>A. Verificación de la configuración</h3>
+        <p>Se utilizó el comando <span class="code">show interfaces trunk</span> en cada switch para verificar la correcta configuración de los enlaces troncales.</p>
+        <div class="placeholder">[Imagen de la configuración del enlace trunk del Switch 0]</div>
+        <div class="placeholder">[Imagen de la configuración del enlace trunk del Switch 1]</div>
+        <div class="placeholder">[Imagen de la configuración del enlace trunk del Switch 2]</div>
+
+        <h3>B. Protocolo de enlaces troncales</h3>
+        <p>El protocolo utilizado para enviar las tramas por los enlaces TRUNK es <strong>IEEE 802.1Q</strong>, que se encarga del etiquetado de VLAN.</p>
+
+        <h3>C. Prueba de comunicación entre VLANs</h3>
+        <p>Se realizó un ping desde PC4 a PC1. La comunicación fue exitosa. Esto se debe a que ambos PCs pertenecen a la misma VLAN (VLAN 10) y los switches están interconectados mediante enlaces troncales que permiten el paso de tráfico de dicha VLAN. El protocolo ARP resolvió las direcciones MAC, permitiendo el posterior envío de paquetes ICMP.</p>
+        <div class="placeholder">[Imagen del "Event List" del panel de simulación mostrando la actividad de red]</div>
+
+        <h3>D. Utilidad de las VLANs</h3>
+        <p>El uso de VLANs y enlaces troncales permite segmentar la red lógicamente sin necesidad de hardware adicional. Esto reduce costos, ya que un solo cable puede transportar tráfico de múltiples VLANs, y aumenta la escalabilidad y flexibilidad de la red, simplificando la administración y mejorando la seguridad.</p>
+    </div>
+
+    <div class="page">
+        <h2>APARTADO 2: ANÁLISIS DE TRAMAS EN MODO SIMULACIÓN</h2>
+
+        <h3>A. Contenido de la trama y encapsulamiento</h3>
+        <p>Se capturó una trama proveniente de PC1 al llegar al Switch 1. En la capa de enlace de datos (Capa 2), la trama de entrada desde el Switch 0 (un puerto trunk) muestra un encabezado <strong>Dot1q Header</strong>, lo que confirma el encapsulamiento. En cambio, la trama de salida hacia PC1 (un puerto de acceso) utiliza un encabezado estándar <strong>Ethernet II</strong>, ya sin la etiqueta de VLAN.</p>
+        <div class="placeholder">[Imagen de la pestaña "Modelo OSI" mostrando la trama de entrada y salida en el Switch 1]</div>
+
+        <h3>B. Proceso en el switch de destino</h3>
+        <p>La trama que sale del Switch 1 hacia PC1 ya no está encapsulada con la etiqueta 802.1Q. El switch elimina los campos TPID y TCI antes de reenviar la trama al puerto de acceso, ya que los dispositivos finales (como los PCs) no interpretan estas etiquetas. El switch ya ha utilizado la información de la VLAN para conmutar la trama al puerto correcto.</p>
+
+        <h2>APARTADO 3: ESTRUCTURA DEL PROTOCOLO DE ENCAPSULAMIENTO TRUNK</h2>
+
+        <h3>Formato del protocolo Ethernet</h3>
+        <p>La trama encapsulada para el enlace troncal cumple con el formato <strong>Ethernet II (DIX)</strong>, modificado por el estándar 802.1Q. Se identifica por la presencia de un campo "Type" y la inserción de la etiqueta de VLAN de 4 bytes entre la dirección MAC de origen y el campo "Type".</p>
+        <div class="placeholder">[Imagen de la trama ethernet del Switch 0 en la pestaña "Outbound PDU details"]</div>
+
+        <h3>Descripción de la estructura 802.1Q</h3>
+        <ul>
+            <li><strong>Preámbulo y SFD:</strong> 8 bytes para la sincronización y delimitación de la trama.</li>
+            <li><strong>Dirección MAC de Destino/Origen:</strong> 6 bytes cada una.</li>
+            <li><strong>Etiqueta 802.1Q (4 bytes):</strong>
+                <ul>
+                    <li><strong>TPID (Tag Protocol Identifier - 2 bytes):</strong> Valor fijo de 0x8100 que identifica la trama como etiquetada.</li>
+                    <li><strong>TCI (Tag Control Information - 2 bytes):</strong> Contiene la prioridad (PCP), el indicador de descarte (DEI) y el identificador de VLAN (VID).</li>
+                </ul>
+            </li>
+            <li><strong>Type:</strong> 2 bytes para identificar el protocolo de capa superior (ej. 0x0800 para IPv4).</li>
+            <li><strong>Datos:</strong> Carga útil de la trama (paquete de Capa 3).</li>
+            <li><strong>FCS:</strong> 4 bytes para la verificación de errores.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
